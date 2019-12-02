@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/selection/border.png" type="Texture" id=1]
+[ext_resource path="res://scenes/selection/font_48.tres" type="DynamicFont" id=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 600.0
+margin_bottom = 400.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 600.0
+margin_bottom = 400.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "This is our right screen test"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

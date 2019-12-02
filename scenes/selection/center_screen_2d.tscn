@@ -1,0 +1,164 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/selection/border.png" type="Texture" id=1]
+[ext_resource path="res://scenes/selection/center_screen_2d.gd" type="Script" id=2]
+[ext_resource path="res://scenes/selection/font_24.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.854902, 0.0627451, 0.0627451, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Border" type="TextureRect" parent="."]
+margin_right = 600.0
+margin_bottom = 400.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 141.0
+margin_top = 21.0
+margin_right = 464.0
+margin_bottom = 377.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button01" type="Button" parent="VBoxContainer"]
+margin_right = 323.0
+margin_bottom = 32.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.435294, 0.435294, 0.435294, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.996094, 0.0429687, 0, 1 )
+text = "Our first button"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button02" type="Button" parent="VBoxContainer"]
+margin_top = 42.0
+margin_right = 323.0
+margin_bottom = 74.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.435294, 0.435294, 0.435294, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.996094, 0.0429687, 0, 1 )
+text = "And our second button"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button03" type="Button" parent="VBoxContainer"]
+margin_top = 84.0
+margin_right = 323.0
+margin_bottom = 116.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.435294, 0.435294, 0.435294, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.996094, 0.0429687, 0, 1 )
+text = "A third button"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button04" type="Button" parent="VBoxContainer"]
+margin_top = 126.0
+margin_right = 323.0
+margin_bottom = 158.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.435294, 0.435294, 0.435294, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.996094, 0.0429687, 0, 1 )
+text = "Our fourth button"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button05" type="Button" parent="VBoxContainer"]
+margin_top = 168.0
+margin_right = 323.0
+margin_bottom = 200.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.435294, 0.435294, 0.435294, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.996094, 0.0429687, 0, 1 )
+text = "How many buttons do we have?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button06" type="Button" parent="VBoxContainer"]
+margin_top = 210.0
+margin_right = 323.0
+margin_bottom = 242.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.435294, 0.435294, 0.435294, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.996094, 0.0429687, 0, 1 )
+text = "Seriously? More buttons?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button07" type="Button" parent="VBoxContainer"]
+margin_top = 252.0
+margin_right = 323.0
+margin_bottom = 284.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.435294, 0.435294, 0.435294, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.996094, 0.0429687, 0, 1 )
+text = "Yup one more"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button08" type="Button" parent="VBoxContainer"]
+margin_top = 294.0
+margin_right = 323.0
+margin_bottom = 326.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0.435294, 0.435294, 0.435294, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.996094, 0.0429687, 0, 1 )
+text = "Last one I promise"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/Button08" to="." method="_on_Button08_pressed"]

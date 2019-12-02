@@ -1,0 +1,119 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scenes/base_scene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/selection/selection.gd" type="Script" id=2]
+[ext_resource path="res://scenes/selection/Screen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/selection/center_screen_2d.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/selection/right_screen_2d.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/selection/left_screen_2d.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/textures/Scene/grid.png" type="Texture" id=7]
+[ext_resource path="res://scenes/selection/fade.shader" type="Shader" id=8]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 0.215686, 0.215686, 0.215686, 1 )
+
+[sub_resource type="ViewportTexture" id=2]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+flags_transparent = true
+flags_unshaded = true
+albedo_texture = SubResource( 2 )
+
+[sub_resource type="PlaneMesh" id=4]
+size = Vector2( 100, 100 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 8 )
+shader_param/fade_color = Color( 0.215686, 0.215686, 0.215686, 1 )
+shader_param/scale = Vector2( 50, 50 )
+shader_param/circle_size = 15.0
+shader_param/fade_size = 20.0
+shader_param/texture_map = ExtResource( 7 )
+
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 2, 75, 2 )
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 8 )
+shader_param/fade_color = Color( 0.215686, 0.215686, 0.215686, 1 )
+shader_param/scale = Vector2( 2, 45 )
+shader_param/circle_size = 15.0
+shader_param/fade_size = 20.0
+shader_param/texture_map = ExtResource( 7 )
+
+[node name="Scene" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+enable_pointer = true
+
+[node name="WorldEnvironment" parent="." index="1"]
+environment = SubResource( 1 )
+
+[node name="Height" type="Spatial" parent="." index="2"]
+
+[node name="Center screen" parent="Height" index="0" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
+material/0 = SubResource( 3 )
+
+[node name="CanvasLayer" parent="Height/Center screen/Viewport" index="0" instance=ExtResource( 4 )]
+
+[node name="Left screen" parent="Height" index="1" instance=ExtResource( 3 )]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -2.59808, 0, -1.5 )
+material/0 = SubResource( 3 )
+
+[node name="CanvasLayer" parent="Height/Left screen/Viewport" index="0" instance=ExtResource( 6 )]
+
+[node name="Right screen" parent="Height" index="2" instance=ExtResource( 3 )]
+transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 2.59808, 0, -1.5 )
+material/0 = SubResource( 3 )
+
+[node name="CanvasLayer" parent="Height/Right screen/Viewport" index="0" instance=ExtResource( 5 )]
+
+[node name="Floor" type="MeshInstance" parent="Height" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.39591, 0 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="Beam01" type="MeshInstance" parent="Height/Floor" index="0"]
+transform = Transform( 0.899512, -0.301711, 0.315988, 0, 0.723256, 0.69058, -0.436896, -0.621185, 0.650578, 5.48937, 15.2259, -7.77054 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Beam02" type="MeshInstance" parent="Height/Floor" index="1"]
+transform = Transform( 0.849534, 0.364304, -0.381542, 0, 0.723256, 0.69058, 0.527534, -0.586671, 0.614431, -11.6097, 15.5661, -7.77054 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Beam03" type="MeshInstance" parent="Height/Floor" index="2"]
+transform = Transform( -0.42376, -0.497978, 0.756601, 0.0697123, 0.8149, 0.575394, -0.903088, 0.296573, -0.310606, 14.3403, 18.2133, -6.5844 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Beam04" type="MeshInstance" parent="Height/Floor" index="3"]
+transform = Transform( -0.103435, -0.686875, 0.719377, 0, 0.723256, 0.69058, -0.994636, 0.0714301, -0.07481, -5.02361, 15.2699, 15.6376 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Beam05" type="MeshInstance" parent="Height/Floor" index="4"]
+transform = Transform( 0.838423, 0.376379, -0.394189, 0, 0.723256, 0.69058, 0.54502, -0.578998, 0.606395, -0.112758, 15.2699, 12.7368 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Beam06" type="MeshInstance" parent="Height/Floor" index="5"]
+transform = Transform( -0.701743, 0.49199, -0.51527, 0, 0.723256, 0.69058, 0.71243, 0.484609, -0.50754, -30.2167, 15.2699, 8.50339 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Beam07" type="MeshInstance" parent="Height/Floor" index="6"]
+transform = Transform( -0.450884, 0.698701, -0.555446, 0.00574851, 0.624551, 0.780963, 0.892564, 0.348931, -0.285617, -3.39578, 15.2699, -28.6274 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+[connection signal="load_world" from="Height/Center screen/Viewport/CanvasLayer" to="." method="_on_CanvasLayer_load_world"]
+
+[editable path="Height/Center screen"]
+
+[editable path="Height/Left screen"]
+
+[editable path="Height/Right screen"]

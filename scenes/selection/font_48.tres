@@ -1,0 +1,9 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://assets/fonts/PT_Sans-Web-Bold.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 48
+outline_size = 2
+outline_color = Color( 1, 0, 0, 0.501961 )
+font_data = ExtResource( 1 )
