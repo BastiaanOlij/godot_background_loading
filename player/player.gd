@@ -40,7 +40,7 @@ func get_camera_transform():
 
 # position our player at a given location and orientation
 func position_player(new_transform : Transform):
-	var t : Transform = $ARVRCamera.global_transform
+	var t : Transform = $ARVRCamera.transform
 	
 	# ignore the height of our camera
 	t.origin.y = 0.0
