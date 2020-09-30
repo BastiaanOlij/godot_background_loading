@@ -48,7 +48,7 @@ func _on_FadeToBlack_finished_fading():
 				current_world = null
 			
 			# Position our player in the center
-			$OVRFirstPerson.position_player(Transform())
+			$OVRFirstPerson.global_transform = Transform()
 			
 			# Disable our functions
 			$OVRFirstPerson.enable_locomotion = false
